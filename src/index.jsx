@@ -1,15 +1,28 @@
 import React from 'react';
 import { render } from 'react-dom';
 import './style.css';
+import movies from './movies.js';
+import Header from './components/Header';
+import Movie from './components/Movie'
+import MovieList from './components/MovieList';
 
-import camera from './img/camera.svg';
 
 const App = () => (
   <>
-    <h1>
-      <img class="logo" src={camera} alt="Logo" />
-      V našem kině právě uvádíme
-    </h1>
+  <div>
+    <Header />
+
+    {movies.map(movies => 
+    <Movie 
+      title={movies.title}
+      poster={movies.poster}
+      year={movies.year}
+      rating={movies.rating}
+      director={movies.director}
+      genre={movies.genre} />
+    )}
+
+  </div>
   </>
 );
 
