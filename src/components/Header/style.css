@@ -1,0 +1,12 @@
+
+.logo {
+  display: inline-block;
+  width: auto;
+  height: 1em;
+  margin-right: 0.3em;
+}
+
+header {
+  text-align: center;
+  font-size: 1.6rem;
+}

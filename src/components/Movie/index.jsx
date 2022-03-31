@@ -1,18 +1,35 @@
 import React from 'react';
+import Actor from '../Actor';
+import './style.css';
 
 
 
-const Movie = ({title, poster, year, rating, director, genre}) => {
+const Movie = ({title, poster, year, rating, director, genre, cast}) => {
   return (
     <>
-    <div className='movie'>
-      <h2 className='title'>{title}</h2>
-      <img className='poster' src={`/assets/${poster}`}/>
-      <p className='year'>{year}</p>
-      <p className='rating'>{rating}</p>
-      <p className='director'>{director}</p>
-      <p className='genre'>{genre}</p>
-    </div>
+    <div className='card'>
+    
+        <div className='movie'>
+          <h2 className='title'>{title}</h2>
+          <img className='poster' src={`/assets/${poster}`}/>
+          <p className='year'><strong>Rok vydání:</strong> {year}</p>
+          <p className='rating'><strong>Hodnocení:</strong> {rating} / 10</p>
+          <p className='director'><strong>Režie:</strong> {director}</p>
+          <p className='genre'><strong>Žánr:</strong> {genre}</p>
+
+          {cast.map(cast => (
+          <Actor 
+            key={cast.name}
+            name={cast.name}
+            as={cast.as}
+          
+            />
+          ))}
+        </div>
+    
+  </div>
+  
+
     </>
   );
 }
